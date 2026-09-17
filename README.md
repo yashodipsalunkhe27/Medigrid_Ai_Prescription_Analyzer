@@ -34,28 +34,32 @@ Explore the MediGrid AI dashboard and its key features.
 
 Upload and analyze prescription images using AI-powered extraction.
 
-![Prescription Analyzer](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7b6fb00e-7376-4fca-9734-642f397462f0" />
+![Prescription Analyzer]
+(<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7b6fb00e-7376-4fca-9734-642f397462f0" />
 )
 
 ### 🤖 AI Assistant
 
 Interact with an AI assistant grounded in saved prescription records.
 
-![AI Assistant](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f4356195-6d6e-480c-a44a-c04a8cae5d59" />
+![AI Assistant]
+(<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f4356195-6d6e-480c-a44a-c04a8cae5d59" />
 )
 
 ### 👤 Patient Profile
 
 View patient-related prescription history and saved medication records.
 
-![Patient Profile](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/90887578-4819-40e9-a6a4-cda8b5c6f148" />
+![Patient Profile]
+(<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/90887578-4819-40e9-a6a4-cda8b5c6f148" />
 )
 
 ### ⚠️ Critical Warnings
 
 Review potential medication interactions, dosage concerns, and allergy-related warnings.
 
-![Critical Warnings](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb772f56-635a-4bfb-a138-0943ae1da822" />
+![Critical Warnings]
+(<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb772f56-635a-4bfb-a138-0943ae1da822" />
 )
 
 ### Report & Analytics <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/538fa9fb-ff58-43da-acbc-57fde0180298" />
