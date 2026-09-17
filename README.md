@@ -11,8 +11,8 @@ MediGrid AI combines **Artificial Intelligence, Prescription Analysis, and Healt
 
 | Service | Link |
 |---|---|
-| 🎨 Frontend (Vercel) | [Live Frontend](YOUR_VERCEL_FRONTEND_URL) |
-| ⚡ Backend API (Render) | [Live Backend API](YOUR_RENDER_BACKEND_URL) |
+| 🎨 Frontend (Vercel) |(medigridaiprescriptionanalyzer.vercel.app) |
+| ⚡ Backend API (Render)(https://medigrid-ai-prescription-analyzer.onrender.com) |
 
 
 > Replace the placeholder URLs with your deployed application links.
