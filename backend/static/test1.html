@@ -1,0 +1,3445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediGrid AI</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+
+    <style>
+
+        /* =========================================================
+           MEDIGRID AI - DESIGN SYSTEM
+           ========================================================= */
+
+        :root {
+            /* ---------- COLORS ---------- */
+            --bg-color: #ffffff;
+            --sidebar-bg: #f8f9fb;
+            --surface-color: #ffffff;
+
+            --primary-color: #2db5b0;
+            --primary-dark: #00838f;
+
+            --blue-color: #2196f3;
+            --blue-dark: #1565c0;
+
+            --success-color: #2e7d32;
+            --warning-color: #ef6c00;
+            --danger-color: #c62828;
+
+            --text-primary: #262730;
+            --text-secondary: #555555;
+            --text-muted: #777777;
+            --text-light: #999999;
+            --text-white: #ffffff;
+
+            --border-color: #e0e0e0;
+            --border-light: #eeeeee;
+
+            --upload-bg: #f0f8ff;
+            --upload-hover: #e0f7fa;
+
+            /* ---------- RADIUS ---------- */
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 14px;
+            --radius-pill: 999px;
+
+            /* ---------- SHADOW ---------- */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 5px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        /* =========================================================
+           RESET
+           ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            font-size: 14px;
+            line-height: 1.5;
+
+            display: flex;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        button:focus-visible,
+        input:focus-visible,
+        a:focus-visible {
+            outline: 3px solid rgba(33, 150, 243, 0.35);
+            outline-offset: 2px;
+        }
+
+        /* =========================================================
+           TYPOGRAPHY
+           ISSUE 4 + ISSUE 5
+           ========================================================= */
+
+        h1 {
+            font-size: 32px;
+            line-height: 1.2;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-size: 24px;
+            line-height: 1.3;
+            font-weight: 700;
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 18px;
+            line-height: 1.4;
+            font-weight: 600;
+            margin-top: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        /* =========================================================
+           SIDEBAR
+           ========================================================= */
+
+        .sidebar {
+            width: 300px;
+            background-color: var(--sidebar-bg);
+            padding: 2rem 1.5rem;
+            height: 100vh;
+
+            border-right: 1px solid var(--border-light);
+
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            flex-shrink: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-section {
+            width: 100%;
+        }
+
+        .sidebar h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 0.6rem;
+            color: var(--text-primary);
+        }
+
+        /* =========================================================
+           INFO BOX
+           ISSUE 8 + ISSUE 9
+           ========================================================= */
+
+        .info-box {
+            background: #e3f2fd;
+            color: var(--blue-dark);
+
+            padding: 0.9rem 1rem;
+
+            border: 1px solid #c5dff0;
+            border-radius: var(--radius-md);
+
+            font-size: 0.9rem;
+            line-height: 1.5;
+
+            margin-bottom: 1rem;
+
+            height: auto;
+            min-height: 0;
+            overflow: visible;
+
+            overflow-wrap: break-word;
+        }
+
+        .guide-step {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .guide-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .disclaimer-box {
+            background: transparent;
+            border: 1px solid #cfd8dc;
+            color: var(--text-secondary);
+        }
+
+        /* =========================================================
+           LOCATION
+           ISSUE 12 + ISSUE 13
+           ========================================================= */
+
+        .location-help {
+            margin-bottom: 0.75rem;
+        }
+
+        .location-btn {
+            background: var(--blue-color);
+            color: var(--text-white);
+
+            border: 1px solid var(--blue-color);
+            width: 100%;
+
+            padding: 0.75rem 1rem;
+
+            border-radius: var(--radius-md);
+
+            cursor: pointer;
+            font-weight: 600;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            transition: 0.2s;
+        }
+
+        .location-btn:hover {
+            background: var(--blue-dark);
+            border-color: var(--blue-dark);
+        }
+
+        .location-btn:disabled {
+            cursor: default;
+        }
+
+        /* Saved location is now a STATUS, not a CTA */
+        .location-status {
+            background: #e8f5e9;
+            color: var(--success-color);
+
+            border: 1px solid #a5d6a7;
+
+            width: 100%;
+            padding: 0.65rem 0.9rem;
+
+            border-radius: var(--radius-pill);
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           MAIN CONTENT
+           ========================================================= */
+
+        .main-content {
+            flex: 1;
+
+            /*
+             * Extra right breathing room prevents the floating
+             * chat button from covering table content.
+             */
+            padding: 1.5rem 5rem 3rem 4rem;
+
+            overflow-y: auto;
+
+            position: relative;
+
+            background: var(--surface-color);
+
+            display: flex;
+            flex-direction: column;
+
+            min-width: 0;
+        }
+
+        /* =========================================================
+           TOP SECTION
+           ========================================================= */
+
+        .top-section {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            margin-bottom: 0.7rem;
+        }
+
+        .sub-header {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 15px;
+        }
+
+        /* =========================================================
+           UPLOAD AREA
+           ISSUE 16
+           ========================================================= */
+
+        .upload-zone {
+            border: 2px dashed var(--primary-dark);
+            background: var(--upload-bg);
+
+            border-radius: var(--radius-lg);
+
+            padding: 2rem;
+
+            text-align: center;
+            cursor: pointer;
+
+            transition: all 0.2s;
+
+            margin: 0 auto 1rem;
+
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .upload-zone:hover {
+            background: var(--upload-hover);
+            border-color: var(--primary-dark);
+        }
+
+        .upload-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            color: var(--text-secondary);
+
+            flex-wrap: wrap;
+        }
+
+        /* Primary button */
+        .browse-btn {
+            background: var(--blue-color);
+            color: var(--text-white);
+
+            border: 1px solid var(--blue-color);
+
+            padding: 10px 18px;
+
+            border-radius: var(--radius-md);
+
+            font-weight: 600;
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .browse-btn:hover {
+            background: var(--blue-dark);
+            border-color: var(--blue-dark);
+        }
+
+        /* =========================================================
+           BUTTON SYSTEM
+           ISSUE 3 + ISSUE 15 + ISSUE 16
+           ========================================================= */
+
+        .btn-primary,
+        .btn-secondary,
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+
+            padding: 10px 16px;
+
+            border-radius: var(--radius-md);
+
+            font-weight: 600;
+
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--blue-color);
+            color: var(--text-white);
+            border: 1px solid var(--blue-color);
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-dark);
+            border-color: var(--blue-dark);
+        }
+
+        .btn-secondary {
+            background: var(--surface-color);
+            color: var(--blue-dark);
+            border: 1px solid var(--blue-color);
+        }
+
+        .btn-secondary:hover {
+            background: #e3f2fd;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid transparent;
+        }
+
+        .btn-ghost:hover {
+            background: #f5f5f5;
+        }
+
+        /* ISSUE 15 */
+        .history-btn {
+            width: auto;
+            max-width: none;
+            margin: 0 auto;
+
+            display: inline-flex;
+        }
+
+        /* =========================================================
+           WAITING STATE
+           ========================================================= */
+
+        .waiting-state {
+            text-align: center;
+            color: var(--text-light);
+
+            margin-top: 3rem;
+
+            transition: opacity 0.3s;
+        }
+
+        .waiting-state h2 {
+            font-size: 22px;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* =========================================================
+           RESULTS
+           ========================================================= */
+
+        .results-container {
+            display: none;
+
+            border-top: 1px solid var(--border-light);
+
+            padding-top: 2rem;
+
+            min-height: 500px;
+
+            animation: slideUp 0.4s ease;
+
+            padding-bottom: 80px;
+        }
+
+        .split-layout {
+            display: flex;
+            gap: 2rem;
+
+            min-height: 500px;
+        }
+
+        .col-header {
+            font-size: 1.2rem;
+            font-weight: 700;
+
+            margin-bottom: 1rem;
+
+            color: var(--text-primary);
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* =========================================================
+           LEFT COLUMN
+           ========================================================= */
+
+        .left-col {
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+
+            min-width: 350px;
+        }
+
+        .img-viewer {
+            flex: 1;
+
+            min-height: 400px;
+
+            background: #222;
+
+            border-radius: var(--radius-md);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow-md);
+
+            position: relative;
+
+            cursor: zoom-in;
+        }
+
+        .img-viewer img {
+            max-width: 100%;
+            max-height: 100%;
+
+            object-fit: contain;
+
+            transition: transform 0.3s;
+        }
+
+        .img-viewer:hover img {
+            transform: scale(1.02);
+        }
+
+        .zoom-hint {
+            position: absolute;
+
+            bottom: 10px;
+            right: 10px;
+
+            background: rgba(0, 0, 0, 0.65);
+            color: var(--text-white);
+
+            padding: 5px 10px;
+
+            border-radius: var(--radius-sm);
+
+            font-size: 0.8rem;
+
+            pointer-events: none;
+        }
+
+        /* =========================================================
+           RIGHT COLUMN
+           ========================================================= */
+
+        .right-col {
+            flex: 1.2;
+
+            background: var(--surface-color);
+
+            border: 1px solid var(--border-light);
+
+            border-radius: var(--radius-md);
+
+            display: flex;
+            flex-direction: column;
+
+            position: relative;
+
+            box-shadow: var(--shadow-md);
+
+            min-width: 0;
+        }
+
+        .analysis-header {
+            padding: 1rem 1rem 0;
+            margin-bottom: 0;
+        }
+
+        .panel-nav {
+            display: flex;
+
+            border-bottom: 1px solid var(--border-light);
+
+            padding: 0 1rem;
+
+            background: #fafafa;
+
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+        }
+
+        .nav-btn {
+            background: transparent;
+
+            border: none;
+
+            padding: 1rem;
+
+            font-weight: 600;
+
+            color: var(--text-secondary);
+
+            cursor: pointer;
+
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-btn:hover {
+            color: var(--primary-dark);
+        }
+
+        .nav-btn.active {
+            color: var(--primary-dark);
+
+            border-bottom-color: var(--primary-dark);
+
+            background: var(--surface-color);
+        }
+
+        .panel-content {
+            flex: 1;
+
+            padding: 1.5rem;
+
+            overflow-y: auto;
+        }
+
+        /* =========================================================
+           LOADER
+           ========================================================= */
+
+        .loader-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            z-index: 10;
+
+            border-radius: var(--radius-md);
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+
+            border: 4px solid #eeeeee;
+            border-top: 4px solid var(--primary-color);
+
+            border-radius: 50%;
+
+            animation: spin 1s linear infinite;
+        }
+
+        /* =========================================================
+           TABLE
+           ========================================================= */
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            margin-top: 1rem;
+
+            font-size: 0.9rem;
+        }
+
+        th {
+            text-align: left;
+
+            padding: 10px;
+
+            background: #f9f9f9;
+
+            color: var(--text-secondary);
+
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px;
+
+            border-bottom: 1px solid var(--border-light);
+
+            color: var(--text-primary);
+        }
+
+        .medication-name {
+            font-weight: 600;
+            color: var(--blue-dark);
+        }
+
+        .map-link {
+            color: var(--danger-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .map-link:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================================================
+           PATIENT CARD
+           ISSUE 10
+           ========================================================= */
+
+        .patient-card {
+            background: #f5f5f5;
+
+            padding: 1rem;
+
+            border-radius: var(--radius-md);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 12px;
+
+            font-weight: 600;
+
+            margin-bottom: 1rem;
+
+            font-size: 0.9rem;
+
+            flex-wrap: wrap;
+        }
+
+        .patient-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .patient-item .material-icons {
+            font-size: 17px;
+            color: var(--text-secondary);
+        }
+
+        /* =========================================================
+           WARNING
+           ========================================================= */
+
+        .warning-item {
+            padding: 10px;
+
+            background: #fff3e0;
+
+            border-left: 4px solid #ff9800;
+
+            margin-bottom: 5px;
+
+            border-radius: var(--radius-sm);
+        }
+
+        .success-message {
+            color: var(--success-color);
+
+            padding: 10px;
+
+            background: #e8f5e9;
+
+            border-radius: var(--radius-sm);
+        }
+
+        .error-message {
+            color: var(--danger-color);
+
+            padding: 10px;
+
+            background: #ffebee;
+
+            border-radius: var(--radius-sm);
+        }
+
+        /* =========================================================
+           RESULT ACTIONS
+           ========================================================= */
+
+        .result-actions {
+            padding: 1rem;
+
+            border-top: 1px solid var(--border-light);
+
+            display: flex;
+
+            gap: 10px;
+
+            justify-content: flex-end;
+
+            flex-wrap: wrap;
+        }
+
+        /* =========================================================
+           FULLSCREEN
+           ========================================================= */
+
+        .fullscreen-overlay {
+            position: fixed;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.9);
+
+            z-index: 5000;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            cursor: zoom-out;
+        }
+
+        .fullscreen-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+
+            object-fit: contain;
+        }
+
+        .fullscreen-close {
+            position: absolute;
+
+            top: 20px;
+            right: 30px;
+
+            color: var(--text-white);
+
+            font-size: 40px;
+
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           MODAL
+           ========================================================= */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            z-index: 2000;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.5);
+
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--surface-color);
+
+            margin: 5% auto;
+
+            padding: 2rem;
+
+            width: min(100%, 1000px);
+
+            max-height: 80vh;
+
+            overflow-y: auto;
+
+            border-radius: var(--radius-lg);
+
+            position: relative;
+
+            box-shadow: var(--shadow-lg);
+        }
+
+        .close-modal {
+            position: absolute;
+
+            top: 15px;
+            right: 20px;
+
+            font-size: 2rem;
+
+            cursor: pointer;
+
+            color: var(--text-secondary);
+
+            background: transparent;
+
+            border: none;
+
+            line-height: 1;
+        }
+
+        /* =========================================================
+           CHAT
+           ISSUE 11 + ISSUE 14
+           ========================================================= */
+
+        .chat-widget-btn {
+            position: fixed;
+
+            bottom: 24px;
+            right: 24px;
+
+            width: 54px;
+            height: 54px;
+
+            background-color: var(--primary-color);
+            color: var(--text-white);
+
+            border-radius: 50%;
+
+            border: none;
+
+            box-shadow: var(--shadow-lg);
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            z-index: 1500;
+
+            transition: transform 0.2s;
+        }
+
+        .chat-widget-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .chat-widget-btn .material-icons {
+            font-size: 28px;
+        }
+
+        /*
+         * Dedicated floating chat panel.
+         * It is separated from the analysis panel and table.
+         */
+        .chat-popup {
+            position: fixed;
+
+            bottom: 92px;
+            right: 24px;
+
+            width: min(360px, calc(100vw - 48px));
+            height: min(500px, calc(100vh - 130px));
+
+            background-color: var(--surface-color);
+
+            border-radius: var(--radius-lg);
+
+            box-shadow: var(--shadow-lg);
+
+            display: flex;
+            flex-direction: column;
+
+            z-index: 1499;
+
+            overflow: hidden;
+
+            border: 1px solid var(--border-light);
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transform: translateY(20px);
+
+            transition: all 0.3s ease;
+        }
+
+        .chat-popup.active {
+            opacity: 1;
+
+            pointer-events: auto;
+
+            transform: translateY(0);
+        }
+
+        .chat-header {
+            background: var(--primary-color);
+
+            color: var(--text-white);
+
+            padding: 1rem;
+
+            font-weight: 600;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .chat-close {
+            border: none;
+
+            background: transparent;
+
+            color: var(--text-white);
+
+            padding: 4px;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-body {
+            flex: 1;
+
+            padding: 1rem;
+
+            overflow-y: auto;
+
+            background-color: #f9f9f9;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+        .chat-footer {
+            padding: 0.8rem;
+
+            border-top: 1px solid var(--border-light);
+
+            background-color: var(--surface-color);
+
+            display: flex;
+
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+
+            min-width: 0;
+
+            border: 1px solid #cccccc;
+
+            border-radius: var(--radius-pill);
+
+            padding: 9px 15px;
+
+            outline: none;
+
+            color: var(--text-primary);
+
+            background: var(--surface-color);
+        }
+
+        .chat-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .chat-send {
+            background: var(--primary-color);
+
+            color: var(--text-white);
+
+            border: none;
+
+            border-radius: 50%;
+
+            width: 36px;
+            height: 36px;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+        }
+
+        .chat-send .material-icons {
+            font-size: 17px;
+        }
+
+        .msg {
+            padding: 8px 12px;
+
+            border-radius: var(--radius-lg);
+
+            max-width: 85%;
+
+            font-size: 0.9rem;
+
+            line-height: 1.4;
+
+            overflow-wrap: break-word;
+        }
+
+        .msg.bot {
+            background: #e8f0fe;
+
+            color: var(--text-primary);
+
+            align-self: flex-start;
+
+            border-bottom-left-radius: var(--radius-sm);
+        }
+
+        .msg.user {
+            background: var(--primary-color);
+
+            color: var(--text-white);
+
+            align-self: flex-end;
+
+            border-bottom-right-radius: var(--radius-sm);
+        }
+
+        /* =========================================================
+           TOAST
+           ========================================================= */
+
+        .toast {
+            position: fixed;
+
+            top: 20px;
+            right: 20px;
+
+            background: #333333;
+
+            color: var(--text-white);
+
+            padding: 12px 20px;
+
+            border-radius: var(--radius-sm);
+
+            animation: fadeIn 0.3s;
+
+            z-index: 6000;
+
+            max-width: 350px;
+        }
+
+        /* =========================================================
+           UTILITY
+           ========================================================= */
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* =========================================================
+           ANIMATIONS
+           ========================================================= */
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .sidebar {
+                width: 260px;
+            }
+
+            .main-content {
+                padding-left: 2rem;
+                padding-right: 4.5rem;
+            }
+
+            .split-layout {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .left-col {
+                min-width: 0;
+                min-height: 400px;
+            }
+
+            .right-col {
+                min-height: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            body {
+                overflow: auto;
+                display: block;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+
+                padding: 1.5rem;
+
+                border-right: none;
+                border-bottom: 1px solid var(--border-light);
+            }
+
+            .main-content {
+                padding: 1.5rem 1rem 6rem;
+            }
+
+            .hero-title {
+                font-size: 26px;
+            }
+
+            .upload-content {
+                flex-direction: column;
+            }
+
+            .split-layout {
+                flex-direction: column;
+            }
+
+            .left-col {
+                min-height: 300px;
+            }
+
+            .patient-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .panel-nav {
+                overflow-x: auto;
+            }
+
+            .nav-btn {
+                white-space: nowrap;
+            }
+
+            .result-actions {
+                justify-content: flex-start;
+            }
+
+            .chat-popup {
+                right: 12px;
+                bottom: 80px;
+
+                width: calc(100vw - 24px);
+                height: min(500px, calc(100vh - 100px));
+            }
+
+            .chat-widget-btn {
+                right: 16px;
+                bottom: 16px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         API + FILE INPUT
+         ========================================================= -->
+
+    <input
+        type="hidden"
+        id="apiUrl"
+        value="http://127.0.0.1:8000/data_extraction">
+
+    <input
+        type="file"
+        id="hiddenFileInput"
+        accept="image/*"
+        style="display:none;">
+
+
+    <!-- =========================================================
+         SIDEBAR
+         ========================================================= -->
+
+    <aside class="sidebar" aria-label="MediGrid AI information">
+
+        <div class="sidebar-title">
+            <span aria-hidden="true">✚</span>
+            MediGrid AI
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <section class="sidebar-section" aria-labelledby="locationHeading">
+
+            <h3 id="locationHeading">
+                <span aria-hidden="true">📍</span>
+                Location Service
+            </h3>
+
+            <div
+                class="info-box location-help"
+                id="locationHelp">
+                Enable location to find nearby pharmacies.
+            </div>
+
+            <button
+                type="button"
+                class="location-btn"
+                id="locBtn"
+                onclick="requestRealLocation()">
+
+                <span
+                    class="material-icons"
+                    aria-hidden="true">
+                    my_location
+                </span>
+
+                Enable Location
+
+            </button>
+
+        </section>
+
+
+        <!-- =====================================================
+             USER GUIDE
+             ISSUE 6 + 7 + 9
+             Only ONE User Guide block is kept.
+             ===================================================== -->
+
+        <section class="sidebar-section" aria-labelledby="guideHeading">
+
+            <h3 id="guideHeading">
+                <span aria-hidden="true">📘</span>
+                User Guide
+            </h3>
+
+            <div class="info-box">
+
+                <div class="guide-step">
+                    1. Enable location (must for nearby pharmacies).
+                </div>
+
+                <div class="guide-step">
+                    2. Upload a prescription image.
+                </div>
+
+                <div class="guide-step">
+                    3. AI extracts medicines clearly.
+                </div>
+
+                <div class="guide-step">
+                    4. Download report.
+                </div>
+
+                <div class="guide-step">
+                    5. Save to Database for chat with AI assistant.
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DISCLAIMER
+                 ISSUE 8
+                 ================================================= -->
+
+            <h3 id="disclaimerHeading">
+                <span aria-hidden="true">ℹ️</span>
+                Disclaimer
+            </h3>
+
+            <div
+                class="info-box disclaimer-box"
+                role="note">
+
+                This AI application provides informational support
+                only and does not substitute for professional medical
+                advice, diagnosis, or treatment.
+
+            </div>
+
+        </section>
+
+    </aside>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+
+    <main class="main-content">
+
+        <!-- =====================================================
+             TOP SECTION
+             ISSUE 5: H1 added
+             ===================================================== -->
+
+        <div class="top-section">
+
+            <h1 class="hero-title">
+                <span aria-hidden="true">✚</span>
+                MediGrid AI
+            </h1>
+
+            <div class="sub-header">
+                Transform handwritten tablet prescriptions into
+                digital medical insights.
+            </div>
+
+
+            <!-- =================================================
+                 UPLOAD
+                 ISSUE 16
+                 ================================================= -->
+
+            <div
+                class="upload-zone"
+                onclick="triggerUpload()"
+                role="button"
+                tabindex="0"
+                aria-label="Upload prescription image">
+
+                <div class="upload-content">
+
+                    <span
+                        class="material-icons"
+                        style="font-size:2rem;"
+                        aria-hidden="true">
+                        cloud_upload
+                    </span>
+
+                    <div>
+
+                        <div
+                            style="font-weight:600;">
+                            Drag and drop file here
+                        </div>
+
+                        <div
+                            style="font-size:0.8rem; color:#777; margin-top:5px;">
+                            Limit 200MB • PNG, JPG, JPEG
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="browse-btn"
+                        onclick="event.stopPropagation(); triggerUpload();">
+
+                        Upload files
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 HISTORY
+                 ISSUE 15
+                 Secondary button
+                 ================================================= -->
+
+            <button
+                type="button"
+                class="btn-secondary history-btn"
+                onclick="toggleHistory()">
+
+                View History
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             WAITING STATE
+             ===================================================== -->
+
+        <section
+            id="waitingState"
+            class="waiting-state"
+            aria-live="polite">
+
+            <h2>
+
+                <span aria-hidden="true">👋</span>
+
+                Waiting for upload...
+
+            </h2>
+
+            <p>
+                Please upload a prescription image to view
+                the analysis dashboard.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESULTS
+             ===================================================== -->
+
+        <section
+            id="resultsContainer"
+            class="results-container"
+            aria-label="Prescription analysis results">
+
+
+            <div class="split-layout">
+
+
+                <!-- =================================================
+                     LEFT - SOURCE IMAGE
+                     ================================================= -->
+
+                <div class="left-col">
+
+                    <div class="col-header">
+
+                        <span
+                            class="material-icons"
+                            aria-hidden="true">
+                            image
+                        </span>
+
+                        Source Image
+
+                    </div>
+
+
+                    <div
+                        class="img-viewer"
+                        onclick="openFullscreen()"
+                        role="button"
+                        tabindex="0"
+                        aria-label="Open prescription image in fullscreen">
+
+                        <img
+                            id="dashboardImg"
+                            src=""
+                            alt="Uploaded prescription">
+
+                        <div class="zoom-hint">
+
+                            <span
+                                class="material-icons"
+                                style="font-size:0.8rem; vertical-align:middle;"
+                                aria-hidden="true">
+                                zoom_in
+                            </span>
+
+                            Click to Zoom
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     RIGHT - ANALYSIS
+                     ================================================= -->
+
+                <div class="right-col">
+
+
+                    <div class="col-header analysis-header">
+
+                        <span
+                            class="material-icons"
+                            aria-hidden="true">
+                            analytics
+                        </span>
+
+                        Analysis
+
+                    </div>
+
+
+                    <!-- LOADER -->
+
+                    <div
+                        class="loader-overlay"
+                        id="dashboardLoader"
+                        role="status"
+                        aria-live="polite">
+
+                        <div class="spinner" aria-hidden="true"></div>
+
+                        <p>
+                            Analyzing Prescription...
+                        </p>
+
+                    </div>
+
+
+                    <!-- TABS -->
+
+                    <div
+                        class="panel-nav"
+                        role="tablist"
+                        aria-label="Prescription analysis tabs">
+
+                        <button
+                            type="button"
+                            class="nav-btn active"
+                            role="tab"
+                            aria-selected="true"
+                            onclick="switchTab('tabData', this)">
+
+                            <span
+                                class="material-icons"
+                                style="font-size:18px; vertical-align:middle;"
+                                aria-hidden="true">
+                                description
+                            </span>
+
+                            Extracted Data
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            role="tab"
+                            aria-selected="false"
+                            onclick="switchTab('tabWarn', this)">
+
+                            <span
+                                class="material-icons"
+                                style="font-size:18px; vertical-align:middle;"
+                                aria-hidden="true">
+                                warning
+                            </span>
+
+                            Critical Warnings
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         EXTRACTED DATA
+                         ================================================= -->
+
+                    <div
+                        id="tabData"
+                        class="panel-content"
+                        role="tabpanel">
+
+                        <div
+                            class="patient-card"
+                            id="patientData"
+                            aria-label="Patient information">
+
+                            Loading...
+
+                        </div>
+
+
+                        <div style="overflow-x:auto;">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th scope="col">
+                                            Medication
+                                        </th>
+
+                                        <th scope="col">
+                                            Dosage
+                                        </th>
+
+                                        <th scope="col">
+                                            Freq
+                                        </th>
+
+                                        <th scope="col">
+                                            Duration
+                                        </th>
+
+                                        <th scope="col">
+                                            Action
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody id="medTable"></tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         WARNINGS
+                         ================================================= -->
+
+                    <div
+                        id="tabWarn"
+                        class="panel-content hidden"
+                        role="tabpanel">
+
+                        <div
+                            id="warningList"
+                            aria-live="polite">
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         ACTION BUTTONS
+                         ================================================= -->
+
+                    <div class="result-actions">
+
+                        <button
+                            type="button"
+                            class="btn-secondary"
+                            onclick="downloadText()">
+
+                            Download Report (.txt)
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn-primary"
+                            onclick="saveToDb(event)">
+
+                            Save to DB
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         CHAT BUTTON
+         ISSUE 14
+         ========================================================= -->
+
+    <button
+        type="button"
+        class="chat-widget-btn"
+        onclick="toggleChat()"
+        aria-label="Open MediAI support assistant"
+        aria-controls="chatPopup"
+        aria-expanded="false">
+
+        <span
+            class="material-icons"
+            aria-hidden="true">
+            support_agent
+        </span>
+
+    </button>
+
+
+    <!-- =========================================================
+         CHAT POPUP
+         ISSUE 11
+         ========================================================= -->
+
+    <section
+        class="chat-popup"
+        id="chatPopup"
+        aria-label="MediAI Support Assistant"
+        aria-hidden="true">
+
+        <div class="chat-header">
+
+            <span>
+                🤖 MediAI Support Assistant
+            </span>
+
+            <button
+                type="button"
+                class="chat-close"
+                onclick="toggleChat()"
+                aria-label="Close chat">
+
+                <span
+                    class="material-icons"
+                    aria-hidden="true">
+                    close
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="chat-body"
+            id="chatBox"
+            aria-live="polite">
+
+            <div class="msg bot">
+
+                Hello! I am your MediGrid assistant.
+                How can I help you with this prescription?
+
+            </div>
+
+        </div>
+
+
+        <div class="chat-footer">
+
+            <input
+                type="text"
+                id="chatInput"
+                class="chat-input"
+                placeholder="Ask a question..."
+                aria-label="Ask MediAI a question"
+                autocomplete="off">
+
+
+            <button
+                type="button"
+                class="chat-send"
+                onclick="sendChat()"
+                aria-label="Send message">
+
+                <span
+                    class="material-icons"
+                    aria-hidden="true">
+                    send
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FULLSCREEN IMAGE
+         ========================================================= -->
+
+    <div
+        id="fullscreenOverlay"
+        class="fullscreen-overlay"
+        onclick="closeFullscreen()"
+        role="dialog"
+        aria-label="Prescription image fullscreen">
+
+        <button
+            type="button"
+            class="fullscreen-close"
+            onclick="event.stopPropagation(); closeFullscreen()"
+            aria-label="Close fullscreen image">
+
+            ×
+
+        </button>
+
+        <img
+            id="fullscreenImg"
+            src=""
+            alt="Prescription fullscreen view">
+
+    </div>
+
+
+    <!-- =========================================================
+         HISTORY MODAL
+         ========================================================= -->
+
+    <div
+        id="historyModal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="historyTitle">
+
+        <div class="modal-content">
+
+            <button
+                type="button"
+                class="close-modal"
+                onclick="toggleHistory()"
+                aria-label="Close history">
+
+                ×
+
+            </button>
+
+
+            <h2 id="historyTitle">
+                📜 Database History
+            </h2>
+
+
+            <div style="overflow-x:auto;">
+
+                <table
+                    id="historyTable"
+                    style="margin-top:20px;">
+
+                    <thead>
+                        <tr id="historyHeader"></tr>
+                    </thead>
+
+                    <tbody id="historyBody"></tbody>
+
+                </table>
+
+            </div>
+
+
+            <p
+                id="historyLoading"
+                style="text-align:center; color:#555;">
+
+                Loading data...
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         Existing API functionality preserved
+         ========================================================= -->
+
+    <script>
+
+        /* =========================================================
+           ELEMENT REFERENCES
+           ========================================================= */
+
+        const fileInput =
+            document.getElementById('hiddenFileInput');
+
+        const resultsContainer =
+            document.getElementById('resultsContainer');
+
+        const waitingState =
+            document.getElementById('waitingState');
+
+        const dashboardImg =
+            document.getElementById('dashboardImg');
+
+        const loader =
+            document.getElementById('dashboardLoader');
+
+        const apiUrl =
+            document.getElementById('apiUrl').value;
+
+        let currentData = null;
+
+        let userCoordinates = null;
+
+
+        /* =========================================================
+           UPLOAD
+           ========================================================= */
+
+        function triggerUpload() {
+            fileInput.click();
+        }
+
+
+        /* Keyboard support for upload zone */
+
+        document
+            .querySelector('.upload-zone')
+            .addEventListener('keydown', function (event) {
+
+                if (
+                    event.key === 'Enter' ||
+                    event.key === ' '
+                ) {
+
+                    event.preventDefault();
+
+                    triggerUpload();
+                }
+
+            });
+
+
+        /* =========================================================
+           LOCATION
+           ISSUE 12 + 13
+           ========================================================= */
+
+        function requestRealLocation() {
+
+            if (!navigator.geolocation) {
+
+                alert("Geolocation not supported.");
+
+                return;
+            }
+
+
+            const btn =
+                document.getElementById('locBtn');
+
+            const help =
+                document.getElementById('locationHelp');
+
+
+            btn.innerHTML =
+                '<span class="material-icons" aria-hidden="true">refresh</span> Requesting...';
+
+            btn.disabled = true;
+
+
+            navigator.geolocation.getCurrentPosition(
+
+                (pos) => {
+
+                    const {
+                        latitude: lat,
+                        longitude: lng
+                    } = pos.coords;
+
+
+                    userCoordinates = {
+                        latitude: lat,
+                        longitude: lng
+                    };
+
+
+                    /*
+                     * Convert action button into
+                     * non-action status indicator.
+                     */
+
+                    const status =
+                        document.createElement('div');
+
+                    status.id = 'locBtn';
+
+                    status.className = 'location-status';
+
+                    status.setAttribute('role', 'status');
+
+                    status.setAttribute(
+                        'aria-live',
+                        'polite'
+                    );
+
+
+                    status.innerHTML =
+                        '<span class="material-icons" aria-hidden="true">check_circle</span> Location Saved';
+
+
+                    btn.replaceWith(status);
+
+
+                    help.textContent =
+                        'Your location is saved. Nearby pharmacies can now be shown.';
+
+
+                    showToast('📍 Location Acquired');
+
+                },
+
+
+                (err) => {
+
+                    btn.disabled = false;
+
+                    btn.innerHTML =
+                        '<span class="material-icons" aria-hidden="true">my_location</span> Enable Location';
+
+
+                    help.textContent =
+                        'Location permission is required to find nearby pharmacies.';
+
+
+                    alert("Permission denied.");
+
+                }
+
+            );
+
+        }
+
+
+        /* =========================================================
+           FILE UPLOAD
+           ========================================================= */
+
+        fileInput.addEventListener(
+            'change',
+            async (e) => {
+
+                const file =
+                    e.target.files[0];
+
+                if (!file) return;
+
+
+                /* Hide waiting state */
+
+                waitingState.style.display =
+                    'none';
+
+
+                /* Show results */
+
+                resultsContainer.style.display =
+                    'block';
+
+
+                /* Preview */
+
+                dashboardImg.src =
+                    URL.createObjectURL(file);
+
+
+                loader.style.display =
+                    'flex';
+
+
+                switchTab(
+                    'tabData',
+                    document.querySelector('.nav-btn')
+                );
+
+
+                const formData =
+                    new FormData();
+
+
+                formData.append(
+                    'image',
+                    file
+                );
+
+
+                if (userCoordinates) {
+
+                    formData.append(
+                        'user_location',
+                        JSON.stringify(userCoordinates)
+                    );
+
+                }
+
+
+                try {
+
+                    const res =
+                        await fetch(
+                            apiUrl,
+                            {
+                                method: 'POST',
+                                body: formData
+                            }
+                        );
+
+
+                    if (!res.ok) {
+
+                        throw new Error(
+                            'Server Error'
+                        );
+
+                    }
+
+
+                    const data =
+                        await res.json();
+
+
+                    currentData =
+                        data;
+
+
+                    renderDashboard(data);
+
+
+                    loader.style.display =
+                        'none';
+
+
+                    showToast(
+                        '✅ Analysis Completed'
+                    );
+
+
+                    fetchWarnings(data);
+
+                }
+
+
+                catch (err) {
+
+                    alert(
+                        'Analysis Failed: Give Location Permission to Analyze. ' +
+                        err.message
+                    );
+
+
+                    loader.style.display =
+                        'none';
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           RENDER DASHBOARD
+           ========================================================= */
+
+        function renderDashboard(data) {
+
+            const p =
+                data.patient_info || {};
+
+
+            const name =
+                p.patient_name ||
+                p.Name ||
+                'Unknown';
+
+
+            const age =
+                p.age ||
+                p.Age ||
+                '--';
+
+
+            const date =
+                p.Date ||
+                '--';
+
+
+            /*
+             * ISSUE 10
+             * Emoji icons replaced with Material Icons.
+             */
+
+            document.getElementById(
+                'patientData'
+            ).innerHTML = `
+
+                <span class="patient-item">
+
+                    <span
+                        class="material-icons"
+                        aria-hidden="true">
+                        person
+                    </span>
+
+                    ${escapeHtml(name)}
+
+                </span>
+
+
+                <span class="patient-item">
+
+                    <span
+                        class="material-icons"
+                        aria-hidden="true">
+                        calendar_today
+                    </span>
+
+                    ${escapeHtml(date)}
+
+                </span>
+
+
+                <span class="patient-item">
+
+                    <span
+                        class="material-icons"
+                        aria-hidden="true">
+                        cake
+                    </span>
+
+                    ${escapeHtml(age)} yrs
+
+                </span>
+
+            `;
+
+
+            const tbody =
+                document.getElementById(
+                    'medTable'
+                );
+
+
+            tbody.innerHTML = '';
+
+
+            (
+                data.Prescription_info || []
+            ).forEach(m => {
+
+                const dur =
+                    m.Duration ||
+                    m.duration ||
+                    'Not provided';
+
+
+                tbody.innerHTML += `
+
+                    <tr>
+
+                        <td class="medication-name">
+                            ${escapeHtml(m.medications || '')}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(m.Dosage || '')}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(m.Frequency || '')}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(dur)}
+                        </td>
+
+                        <td>
+
+                            <a
+                                href="${escapeAttribute(m.Map_link || '#')}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="map-link">
+
+                                <span
+                                    class="material-icons"
+                                    style="font-size:16px; vertical-align:middle;"
+                                    aria-hidden="true">
+                                    location_on
+                                </span>
+
+                                Map
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            });
+
+        }
+
+
+        /* =========================================================
+           WARNINGS
+           ========================================================= */
+
+        async function fetchWarnings(data) {
+
+            try {
+
+                const cleanData =
+                    JSON.parse(
+                        JSON.stringify(data)
+                    );
+
+
+                if (cleanData.Prescription_info) {
+
+                    cleanData.Prescription_info =
+                        cleanData.Prescription_info.map(
+                            item => ({
+
+                                medications:
+                                    item.medications,
+
+                                Dosage:
+                                    item.Dosage,
+
+                                Frequency:
+                                    item.Frequency,
+
+                                Duration:
+                                    item.Duration ||
+                                    item.duration ||
+                                    "Not provided",
+
+                                Map_link:
+                                    item.Map_link
+
+                            })
+                        );
+
+                }
+
+
+                const url =
+                    apiUrl.replace(
+                        'data_extraction',
+                        'critical_warnings'
+                    );
+
+
+                const res =
+                    await fetch(
+                        url,
+                        {
+                            method: 'POST',
+
+                            headers: {
+                                'Content-Type':
+                                    'application/json'
+                            },
+
+                            body:
+                                JSON.stringify(cleanData)
+                        }
+                    );
+
+
+                const warnings =
+                    await res.json();
+
+
+                const div =
+                    document.getElementById(
+                        'warningList'
+                    );
+
+
+                div.innerHTML = '';
+
+
+                if (warnings.detail) {
+
+                    div.innerHTML = `
+
+                        <div class="error-message">
+
+                            Backend Validation Error:
+                            ${escapeHtml(
+                                JSON.stringify(
+                                    warnings.detail
+                                )
+                            )}
+
+                        </div>
+
+                    `;
+
+                    return;
+
+                }
+
+
+                if (
+                    !warnings ||
+                    warnings.length === 0
+                ) {
+
+                    div.innerHTML = `
+
+                        <div class="success-message">
+
+                            No critical warnings.
+
+                        </div>
+
+                    `;
+
+                }
+
+
+                else {
+
+                    let list =
+                        Array.isArray(warnings)
+                            ? warnings
+                            : [JSON.stringify(warnings)];
+
+
+                    list.forEach(w => {
+
+                        let cleanW =
+                            String(w).trim();
+
+
+                        if (!cleanW) return;
+
+
+                        if (
+                            cleanW.startsWith('-')
+                        ) {
+
+                            cleanW =
+                                cleanW
+                                    .substring(1)
+                                    .trim();
+
+                        }
+
+
+                        /*
+                         * Keep warning text safe.
+                         */
+
+                        const item =
+                            document.createElement(
+                                'div'
+                            );
+
+                        item.className =
+                            'warning-item';
+
+                        item.textContent =
+                            cleanW;
+
+
+                        div.appendChild(item);
+
+                    });
+
+
+                    showToast(
+                        "⚠️ Warnings Found"
+                    );
+
+                }
+
+            }
+
+            catch (e) {
+
+                console.error(e);
+
+                document.getElementById(
+                    'warningList'
+                ).innerHTML = `
+
+                    <div class="error-message">
+
+                        Unable to load critical warnings.
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           SAVE TO DATABASE
+           ========================================================= */
+
+        function saveToDb(event) {
+
+            if (event)
+                event.preventDefault();
+
+
+            if (!currentData) {
+
+                showToast(
+                    '❌ No prescription data available'
+                );
+
+                return;
+
+            }
+
+
+            const payload = {
+
+                patient_info:
+                    currentData.patient_info,
+
+                Prescription_info:
+                    (
+                        currentData.Prescription_info ||
+                        []
+                    ).map(item => ({
+
+                        medications:
+                            item.medications,
+
+                        Dosage:
+                            item.Dosage,
+
+                        Frequency:
+                            item.Frequency,
+
+                        Duration:
+                            item.Duration ||
+                            item.duration ||
+                            "Not provided",
+
+                        Map_link:
+                            item.Map_link
+
+                    }))
+
+            };
+
+
+            fetch(
+                "http://127.0.0.1:8000/post_into_db",
+                {
+
+                    method: 'POST',
+
+                    headers: {
+                        'Content-Type':
+                            'application/json'
+                    },
+
+                    body:
+                        JSON.stringify(payload)
+
+                }
+            )
+
+            .then(res => {
+
+                if (res.ok) {
+
+                    showToast(
+                        "💾 Saved to Database"
+                    );
+
+                }
+
+                else {
+
+                    showToast(
+                        "❌ Save Failed"
+                    );
+
+                }
+
+            })
+
+            .catch(() => {
+
+                showToast(
+                    "❌ Database connection failed"
+                );
+
+            });
+
+        }
+
+
+        /* =========================================================
+           HISTORY
+           ========================================================= */
+
+        async function toggleHistory() {
+
+            const modal =
+                document.getElementById(
+                    'historyModal'
+                );
+
+
+            const isOpen =
+                modal.style.display === 'block';
+
+
+            modal.style.display =
+                isOpen
+                    ? 'none'
+                    : 'block';
+
+
+            if (!isOpen) {
+
+                const body =
+                    document.getElementById(
+                        'historyBody'
+                    );
+
+
+                const head =
+                    document.getElementById(
+                        'historyHeader'
+                    );
+
+
+                document.getElementById(
+                    'historyLoading'
+                ).style.display =
+                    'block';
+
+
+                body.innerHTML = '';
+
+                head.innerHTML = '';
+
+
+                try {
+
+                    const res =
+                        await fetch(
+                            "http://127.0.0.1:8000/get_Saved_data"
+                        );
+
+
+                    const json =
+                        await res.json();
+
+
+                    const data =
+                        typeof json === 'string'
+                            ? JSON.parse(json)
+                            : json;
+
+
+                    document.getElementById(
+                        'historyLoading'
+                    ).style.display =
+                        'none';
+
+
+                    if (
+                        !data ||
+                        data.length === 0
+                    ) {
+
+                        body.innerHTML = `
+
+                            <tr>
+                                <td colspan="10">
+                                    No history.
+                                </td>
+                            </tr>
+
+                        `;
+
+                        return;
+
+                    }
+
+
+                    const keys =
+                        Object.keys(data[0]);
+
+
+                    keys.forEach(k => {
+
+                        const th =
+                            document.createElement(
+                                'th'
+                            );
+
+                        th.scope = 'col';
+
+                        th.textContent = k;
+
+                        head.appendChild(th);
+
+                    });
+
+
+                    data.forEach(r => {
+
+                        const tr =
+                            document.createElement(
+                                'tr'
+                            );
+
+
+                        keys.forEach(k => {
+
+                            const td =
+                                document.createElement(
+                                    'td'
+                                );
+
+                            td.textContent =
+                                r[k] ?? '';
+
+                            tr.appendChild(td);
+
+                        });
+
+
+                        body.appendChild(tr);
+
+                    });
+
+                }
+
+
+                catch (e) {
+
+                    document.getElementById(
+                        'historyLoading'
+                    ).innerText =
+                        "Error loading history";
+
+                }
+
+            }
+
+        }
+
+
+        /* Close modal by clicking outside */
+
+        window.addEventListener(
+            'click',
+            function (e) {
+
+                const modal =
+                    document.getElementById(
+                        'historyModal'
+                    );
+
+
+                if (e.target === modal) {
+
+                    toggleHistory();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           FULLSCREEN
+           ========================================================= */
+
+        function openFullscreen() {
+
+            const src =
+                document.getElementById(
+                    'dashboardImg'
+                ).src;
+
+
+            if (src) {
+
+                document.getElementById(
+                    'fullscreenImg'
+                ).src = src;
+
+
+                document.getElementById(
+                    'fullscreenOverlay'
+                ).style.display =
+                    'flex';
+
+            }
+
+        }
+
+
+        function closeFullscreen() {
+
+            document.getElementById(
+                'fullscreenOverlay'
+            ).style.display =
+                'none';
+
+        }
+
+
+        /* =========================================================
+           TABS
+           ========================================================= */
+
+        function switchTab(id, btn) {
+
+            document
+                .querySelectorAll(
+                    '.panel-content'
+                )
+                .forEach(d => {
+
+                    d.classList.add(
+                        'hidden'
+                    );
+
+                });
+
+
+            document
+                .getElementById(id)
+                .classList.remove(
+                    'hidden'
+                );
+
+
+            document
+                .querySelectorAll(
+                    '.nav-btn'
+                )
+                .forEach(b => {
+
+                    b.classList.remove(
+                        'active'
+                    );
+
+                    b.setAttribute(
+                        'aria-selected',
+                        'false'
+                    );
+
+                });
+
+
+            if (btn) {
+
+                btn.classList.add(
+                    'active'
+                );
+
+                btn.setAttribute(
+                    'aria-selected',
+                    'true'
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           TOAST
+           ========================================================= */
+
+        function showToast(msg) {
+
+            const t =
+                document.createElement(
+                    'div'
+                );
+
+
+            t.className =
+                'toast';
+
+
+            t.setAttribute(
+                'role',
+                'status'
+            );
+
+
+            t.setAttribute(
+                'aria-live',
+                'polite'
+            );
+
+
+            t.textContent =
+                msg;
+
+
+            document.body.appendChild(t);
+
+
+            setTimeout(
+                () => t.remove(),
+                3000
+            );
+
+        }
+
+
+        /* =========================================================
+           DOWNLOAD REPORT
+           ========================================================= */
+
+        function downloadText() {
+
+            if (!currentData)
+                return;
+
+
+            let text =
+                "MEDIGRID AI REPORT\n";
+
+
+            text +=
+                "==============================================================================\n";
+
+
+            const p =
+                currentData.patient_info ||
+                {};
+
+
+            text +=
+                `Patient Name: ${p.patient_name || p.Name || 'N/A'}\n`;
+
+
+            text +=
+                `Age:          ${p.age || p.Age || 'N/A'}\n`;
+
+
+            text +=
+                `Date:         ${p.Date || 'N/A'}\n`;
+
+
+            text +=
+                "==============================================================================\n\n";
+
+
+            text +=
+                "MEDICATIONS LIST:\n";
+
+
+            text +=
+                "------------------------------------------------------------------------------\n";
+
+
+            text +=
+                "| Medication           | Dosage      | Frequency    | Duration     |\n";
+
+
+            text +=
+                "|----------------------|-------------|--------------|--------------|\n";
+
+
+            (
+                currentData.Prescription_info ||
+                []
+            ).forEach(m => {
+
+                const med =
+                    (m.medications || "")
+                        .padEnd(20)
+                        .substring(0, 20);
+
+
+                const dos =
+                    (m.Dosage || "")
+                        .padEnd(11)
+                        .substring(0, 11);
+
+
+                const freq =
+                    (m.Frequency || "")
+                        .padEnd(12)
+                        .substring(0, 12);
+
+
+                const dur =
+                    (
+                        m.duration ||
+                        m.Duration ||
+                        ""
+                    )
+                        .padEnd(12)
+                        .substring(0, 12);
+
+
+                text +=
+                    `| ${med} | ${dos} | ${freq} | ${dur} |\n`;
+
+            });
+
+
+            text +=
+                "------------------------------------------------------------------------------\n";
+
+
+            const blob =
+                new Blob(
+                    [text],
+                    {
+                        type:
+                            'text/plain'
+                    }
+                );
+
+
+            const a =
+                document.createElement(
+                    'a'
+                );
+
+
+            a.href =
+                URL.createObjectURL(blob);
+
+
+            a.download =
+                "MediGrid_Report.txt";
+
+
+            a.click();
+
+        }
+
+
+        /* =========================================================
+           CHAT
+           ISSUE 11 + 14
+           ========================================================= */
+
+        function toggleChat() {
+
+            const popup =
+                document.getElementById(
+                    'chatPopup'
+                );
+
+
+            const button =
+                document.querySelector(
+                    '.chat-widget-btn'
+                );
+
+
+            const isActive =
+                popup.classList.toggle(
+                    'active'
+                );
+
+
+            popup.setAttribute(
+                'aria-hidden',
+                String(!isActive)
+            );
+
+
+            button.setAttribute(
+                'aria-expanded',
+                String(isActive)
+            );
+
+
+            if (isActive) {
+
+                document.getElementById(
+                    'chatInput'
+                ).focus();
+
+            }
+
+        }
+
+
+        /* =========================================================
+           SEND CHAT
+           ========================================================= */
+
+        async function sendChat() {
+
+            const inp =
+                document.getElementById(
+                    'chatInput'
+                );
+
+
+            const val =
+                inp.value.trim();
+
+
+            if (!val)
+                return;
+
+
+            const box =
+                document.getElementById(
+                    'chatBox'
+                );
+
+
+            /* User message */
+
+            const userMessage =
+                document.createElement(
+                    'div'
+                );
+
+
+            userMessage.className =
+                'msg user';
+
+
+            userMessage.textContent =
+                val;
+
+
+            box.appendChild(
+                userMessage
+            );
+
+
+            inp.value = '';
+
+
+            box.scrollTop =
+                box.scrollHeight;
+
+
+            try {
+
+                const res =
+                    await fetch(
+                        "http://127.0.0.1:8000/chat",
+                        {
+
+                            method: 'POST',
+
+                            headers: {
+                                'Content-Type':
+                                    'application/json'
+                            },
+
+                            body:
+                                JSON.stringify({
+                                    message: val
+                                })
+
+                        }
+                    );
+
+
+                if (!res.ok) {
+
+                    throw new Error(
+                        'Chat server error'
+                    );
+
+                }
+
+
+                const data =
+                    await res.json();
+
+
+                const botMessage =
+                    document.createElement(
+                        'div'
+                    );
+
+
+                botMessage.className =
+                    'msg bot';
+
+
+                botMessage.textContent =
+                    data.response ||
+                    'Sorry, I could not generate a response.';
+
+
+                box.appendChild(
+                    botMessage
+                );
+
+
+                box.scrollTop =
+                    box.scrollHeight;
+
+            }
+
+
+            catch (e) {
+
+                const errorMessage =
+                    document.createElement(
+                        'div'
+                    );
+
+
+                errorMessage.className =
+                    'msg bot';
+
+
+                errorMessage.textContent =
+                    'Unable to connect to MediAI assistant.';
+
+
+                box.appendChild(
+                    errorMessage
+                );
+
+
+                box.scrollTop =
+                    box.scrollHeight;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           ENTER KEY FOR CHAT
+           ========================================================= */
+
+        document
+            .getElementById('chatInput')
+            .addEventListener(
+                'keydown',
+                (e) => {
+
+                    if (e.key === 'Enter') {
+
+                        e.preventDefault();
+
+                        sendChat();
+
+                    }
+
+                }
+            );
+
+
+        /* =========================================================
+           SAFE HTML HELPERS
+           ========================================================= */
+
+        function escapeHtml(value) {
+
+            return String(value)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+
+        }
+
+
+        function escapeAttribute(value) {
+
+            return String(value)
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+
+        }
+
+    </script>
+
+</body>
+
+</html>
