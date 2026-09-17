@@ -7,3 +7,4 @@ fastapi[standard]
 uvicorn
 pydantic
 pandas
+groq
