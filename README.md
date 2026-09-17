@@ -1,159 +1,486 @@
-# MediGrid AI — Smarter Care. Safer Prescriptions.
 
-A premium healthcare SaaS frontend built on top of your existing MEDI_AI FastAPI
-backend. The backend logic, AI prompts, and database code are **untouched** —
-this delivery adds a new production-quality React frontend and wires it to
-your existing endpoints.
+# 🏥 MediGrid AI — Smarter Care. Safer Prescriptions.
 
-```
-MediGrid_AI/
-├── backend/     ← your original FastAPI project, unmodified
-└── frontend/    ← new React + Vite + Tailwind frontend (MediGrid AI)
+An AI-powered healthcare dashboard designed to help analyze prescriptions, identify potential medication safety concerns, track patient prescription history, and interact with an AI assistant grounded in saved records.
+
+MediGrid AI combines **Artificial Intelligence, Prescription Analysis, and Healthcare Data Management** in a modern, responsive web application.
+
+---
+
+## 🌐 Live Demo
+
+| Service | Link |
+|---|---|
+| 🎨 Frontend (Vercel) | [Live Frontend](YOUR_VERCEL_FRONTEND_URL) |
+| ⚡ Backend API (Render) | [Live Backend API](YOUR_RENDER_BACKEND_URL) |
+
+
+> Replace the placeholder URLs with your deployed application links.
+
+---
+
+## 📸 Project Screenshots
+
+Explore the MediGrid AI dashboard and its key features.
+
+### 🏠 Dashboard
+
+<!-- Replace the path with your actual screenshot -->
+![MediGrid AI Dashboard](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3ea791b8-85b4-4741-a525-f7d9399f335f" />
+)
+
+### 📄 Prescription Analyzer
+
+Upload and analyze prescription images using AI-powered extraction.
+
+![Prescription Analyzer](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7b6fb00e-7376-4fca-9734-642f397462f0" />
+)
+
+### 🤖 AI Assistant
+
+Interact with an AI assistant grounded in saved prescription records.
+
+![AI Assistant](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f4356195-6d6e-480c-a44a-c04a8cae5d59" />
+)
+
+### 👤 Patient Profile
+
+View patient-related prescription history and saved medication records.
+
+![Patient Profile](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/90887578-4819-40e9-a6a4-cda8b5c6f148" />
+)
+
+### ⚠️ Critical Warnings
+
+Review potential medication interactions, dosage concerns, and allergy-related warnings.
+
+![Critical Warnings](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb772f56-635a-4bfb-a138-0943ae1da822" />
+)
+
+### Report & Analytics <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/538fa9fb-ff58-43da-acbc-57fde0180298" />
+
+---
+
+## ✨ Key Features
+
+- 📄 **AI Prescription Analysis**
+  - Upload prescription images.
+  - Extract prescription and medication information using a vision model.
+
+- ⚠️ **Critical Safety Checks**
+  - Analyze potential medication interactions.
+  - Review dosage-related concerns.
+  - Check allergy-related information.
+  - Generate AI-assisted safety warnings.
+
+- 👥 **Patient Management**
+  - View saved patient prescription records.
+  - Explore patient profiles and history.
+
+- 🤖 **AI Healthcare Assistant**
+  - Chat with an AI assistant.
+  - Ground responses in saved prescription records.
+
+- 📊 **Reports & Analytics**
+  - Track prescription-related statistics.
+  - Explore data through interactive charts.
+
+- 💊 **Pharmacy & Location**
+  - Request the user's location.
+  - Generate Google Maps pharmacy search links.
+  - Provide a generic pharmacy search fallback when location access is unavailable.
+
+- 🌙 **Modern Responsive UI**
+  - Light and dark themes.
+  - Responsive dashboard.
+  - Collapsible sidebar.
+  - Mobile navigation drawer.
+  - Loading states and error handling.
+  - Toast notifications and confirmation dialogs.
+
+---
+
+## 🧩 Application Pages
+
+The application includes the following pages:
+
+| Page | Description |
+|---|---|
+| Dashboard | Overview and prescription statistics |
+| Prescription Analyzer | Upload and analyze prescriptions |
+| Patients | View saved patient records |
+| Patient Profile | Review patient-specific data |
+| AI Assistant | AI-powered healthcare chat |
+| Prescription History | Review saved prescriptions |
+| Critical Warnings | View safety check results |
+| Pharmacy & Location | Find pharmacies using location |
+| Reports & Analytics | Analyze prescription-related data |
+| Settings | Manage application preferences |
+| Clinician Profile | Edit clinician name and role |
+
+---
+
+## 🏗️ Project Architecture
+
+```text
+MediGrid-AI-main/
+│
+├── backend/
+│   ├── fast_api_file.py
+│   ├── requirements.txt
+│   ├── .env
+│   ├── MediGrid.db
+│   └── ...
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   │   └── screenshots/
+│   ├── package.json
+│   ├── vite.config.js
+│   └── ...
+│
+└── README.md
 ```
 
 ---
 
-## 1. Run the backend
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React
+- Vite
+- Tailwind CSS
+- Lucide React
+- Recharts
+- Motion
+
+### Backend
+
+- Python
+- FastAPI
+- SQLite
+- Uvicorn
+
+### Artificial Intelligence
+
+- Groq API
+- Vision model for prescription image analysis
+- Text model for AI Assistant and safety analysis
+
+### Deployment
+
+- Frontend: Vercel
+- Backend: Render
+
+---
+
+## 🔌 API Endpoints
+
+The frontend communicates with the FastAPI backend through the following endpoints.
+
+| Feature | HTTP Method | Endpoint |
+|---|---|---|
+| Prescription Analysis | POST | `/data_extraction` |
+| Critical Safety Checks | POST | `/critical_warnings` |
+| Save Prescription | POST | `/post_into_db` |
+| Retrieve Saved Data | GET | `/get_Saved_data` |
+| AI Assistant Chat | POST | `/chat` |
+
+API documentation is available through FastAPI's Swagger UI:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+---
+
+# 🚀 Getting Started
+
+## 1. Clone the Repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd MediGrid-AI-main
+```
+
+---
+
+## 2. Backend Setup
+
+Navigate to the backend directory:
 
 ```bash
 cd backend
+```
+
+### Create a Virtual Environment
+
+**Windows:**
+
+```bash
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+venv\Scripts\activate
+```
+
+**Linux / macOS:**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-Create `backend/.env` (this was intentionally **not** copied into this zip
-for security — your original key was visible in plain text in the uploaded
-project, so it has not been re-embedded here):
+### Configure Environment Variables
 
-```
-GEMINI_API_KEY=your_gemini_api_key_here
+Create a `.env` file inside the `backend` directory:
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
-Then start the API exactly as before:
+Get your API key from:
+
+https://console.groq.com/
+
+> Never expose your API key in source code or commit your `.env` file to GitHub.
+
+### Run the Backend
 
 ```bash
 python -m uvicorn fast_api_file:api --reload --reload-exclude "*.db"
 ```
 
-The API will be available at `http://127.0.0.1:8000`. CORS is already open
-(`allow_origins=["*"]`) in `fast_api_file.py`, so the new frontend can call it
-straight away — no backend changes were needed.
+Backend URL:
 
-> **Security note:** rotate the Gemini API key that was visible in your
-> original `.env` before pushing this project anywhere public (GitHub, a
-> shared drive, etc.), since it was exposed in plain text in the upload.
+```text
+http://127.0.0.1:8000
+```
+
+Swagger API Documentation:
+
+```text
+http://127.0.0.1:8000/docs
+```
 
 ---
 
-## 2. Run the frontend
+## 3. Frontend Setup
+
+Open a new terminal and navigate to the frontend:
 
 ```bash
 cd frontend
-npm install
-npm run dev
 ```
 
-Vite will start on `http://localhost:5173`. It talks to the backend at
-`http://127.0.0.1:8000` by default — override this by copying
-`.env.example` to `.env` and changing `VITE_API_URL` if your backend runs
-elsewhere.
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Configure Frontend Environment
+
+Copy the example environment file:
+
+**Windows:**
+
+```powershell
+Copy-Item .env.example .env
+```
+
+**Linux / macOS:**
 
 ```bash
 cp .env.example .env
-npm run build      # production build → frontend/dist
-npm run preview    # preview the production build locally
+```
+
+Update `.env`:
+
+```env
+VITE_API_URL=http://127.0.0.1:8000
+```
+
+> Use your deployed Render backend URL when connecting the frontend to production.
+
+### Start the Development Server
+
+```bash
+npm run dev
+```
+
+Frontend URL:
+
+```text
+http://localhost:5173
+```
+
+### Production Build
+
+```bash
+npm run build
+```
+
+The production build is generated in:
+
+```text
+frontend/dist
+```
+
+Preview the production build:
+
+```bash
+npm run preview
 ```
 
 ---
 
-## What's implemented
+## ☁️ Deployment
 
-**Pages:** Dashboard, Prescription Analyzer, Patients, Patient Profile, AI
-Assistant, Prescription History, Critical Warnings, Pharmacy & Location,
-Reports & Analytics, Settings.
+### Backend Deployment — Render
 
-**Every page is wired to your real endpoints — nothing is hard-coded mock
-data once the backend is running:**
+**Configuration**
 
-| Frontend feature | Backend endpoint |
+| Setting | Value |
 |---|---|
-| Upload & analyze a prescription | `POST /data_extraction` |
-| Interaction / dosage / allergy checks | `POST /critical_warnings` |
-| Save a reviewed prescription | `POST /post_into_db` |
-| Patients, History, Dashboard stats, Analytics | `GET /get_Saved_data` |
-| AI Assistant chat | `POST /chat` |
+| Platform | Render |
+| Root Directory | `backend` |
+| Build Command | `pip install -r requirements.txt` |
+| Start Command | `uvicorn fast_api_file:api --host 0.0.0.0 --port $PORT` |
+| Environment Variable | `GROQ_API_KEY` |
 
-**Global UI:** collapsible sidebar with mobile drawer, top header with
-search/notifications/theme toggle/profile, full dark mode (hand-tuned, not
-inverted), toasts, loading skeletons, empty states, error states with retry,
-confirm dialogs, responsive tables that collapse into cards on mobile.
+Add the `GROQ_API_KEY` environment variable through the Render dashboard.
 
-**Design tokens** (light & dark) live as CSS variables in
-`frontend/src/index.css` and are mapped into Tailwind in
-`frontend/tailwind.config.js`, using the exact palette you specified
-(`#0F9D94` primary, `#2563EB` accent, etc.).
+**Backend URL:**
 
-### A few honest implementation notes
+```text
+YOUR_RENDER_BACKEND_URL
+```
 
-Your backend doesn't currently expose endpoints for **patient age/gender
-persistence**, **deleting a saved record**, or a **pharmacy directory /
-places search** — so the frontend handles those gracefully instead of
-faking data:
+### Frontend Deployment — Vercel
 
-- **Patients & Risk level:** since the database only stores medication rows
-  (no age/gender/diagnosis), patient risk badges are a transparent,
-  documented heuristic based on prescription volume (see
-  `frontend/src/lib/records.js`), not a fabricated AI score.
-- **Delete (History page):** there's no `DELETE` endpoint yet, so "Delete"
-  hides the record from your local view only, and says so explicitly in the
-  confirmation dialog — it does not silently pretend to remove it from
-  SQLite.
-- **Pharmacy & Location:** the page requests geolocation and generates the
-  same Google Maps search link your backend already attaches to
-  prescriptions (`location.py`), rather than inventing fictitious pharmacy
-  names/addresses.
-- **Critical Warnings history:** the backend doesn't persist warning
-  results, so the Warnings page keeps a local, per-device log (in
-  `localStorage`) of the checks you've run this session/device.
+**Configuration**
 
-None of this required backend changes — it's all frontend-side handling of
-gaps that exist today. If you add endpoints for these later (e.g. a
-`DELETE /prescription/{id}` or a places-search integration), the relevant
-frontend pages are already structured to swap the placeholder logic for a
-real API call — see `frontend/src/services/api.js`.
+| Setting | Value |
+|---|---|
+| Platform | Vercel |
+| Root Directory | `frontend` |
+| Framework | Vite |
+| Build Command | `npm run build` |
+| Output Directory | `dist` |
+
+Configure the frontend environment variable:
+
+```env
+VITE_API_URL=YOUR_RENDER_BACKEND_URL
+```
+
+**Frontend URL:**
+
+```text
+YOUR_VERCEL_FRONTEND_URL
+```
+
+> Ensure the deployed frontend uses the correct backend URL and that the backend is configured to accept requests from the frontend.
 
 ---
 
-## Verification performed
+## 🗄️ Database
 
-Because this environment has no network access, `npm install` / a live
-`npm run dev` could not be executed here. Instead, everything was verified
-statically before packaging:
+MediGrid AI uses **SQLite** to store prescription-related records.
 
-- ✅ Every `.jsx`/`.js` file passed a TypeScript syntax check (loose mode,
-  JSX-aware) — no unbalanced tags, bad imports, or syntax errors.
-- ✅ Every relative import path resolves to a real file.
-- ✅ Every named/default import matches an actual export in its source file.
-- ✅ Backend files were copied **byte-for-byte unmodified** (verified
-  against the original upload) — including `static/test1.html`, which
-  `GET /` still serves, so the existing root route keeps working.
-- ✅ No `undefined`/`null`/`NaN` are ever rendered — all display values go
-  through a `safe()` formatter that falls back to readable text.
+### Database File
 
-**Please still run `npm install && npm run dev` yourself** and click through
-the app once against your live backend — this checks structure and wiring
-exhaustively, but a real browser run is the only way to catch runtime issues
-like a mistyped icon name or an API response shape that differs from what
-`Extracting_prescription_data.py` currently returns. If anything doesn't
-render, the browser console will point straight at the file/line.
+```text
+backend/MediGrid.db
+```
+
+### Implementation Notes
+
+- The database stores medication-related prescription rows.
+- Patient risk badges use a documented prescription-volume heuristic because the current database does not store age, gender, or diagnosis.
+- The History page's Delete action hides records from the local view; it does not delete them from SQLite because a DELETE endpoint is not implemented.
+- Critical Warning results are not persisted in the backend. The frontend maintains a local, per-device log using `localStorage`.
+
+### Production Consideration
+
+Render's free-tier filesystem is ephemeral. SQLite data may be lost after service restarts or redeployments.
+
+For production use, consider a hosted database such as:
+
+- PostgreSQL
+- Supabase
+- Another managed database service
+
+> Database persistence, access controls, and backup policies should be reviewed before using the application with real patient data.
 
 ---
 
-## Tech stack (as requested)
+## 🔐 Security & Privacy
 
-- React + Vite + Tailwind CSS
-- `lucide-react` for icons (no emoji anywhere in the UI)
-- `recharts` for the Analytics charts
-- `motion` (the Motion library) for subtle page/modal transitions
-- Your existing FastAPI + Gemini + SQLite backend, untouched
+- Never commit `.env` files or API keys.
+- Do not expose Groq API keys in the frontend.
+- Use environment variables for sensitive configuration.
+- Review authentication and authorization before production deployment.
+- Protect patient information and prescription data.
+- Do not use AI-generated warnings as a substitute for professional medical judgment.
+
+**Important:** This project is an AI-assisted healthcare application prototype. Its outputs should be reviewed by qualified healthcare professionals, and the application should not be relied upon as the sole basis for prescribing or treatment decisions.
+
+---
+
+## ⚠️ Project Limitations
+
+1. The current SQLite database stores medication-related rows and does not include a complete clinical patient record.
+2. Patient risk indicators are heuristic-based, not clinically validated risk scores.
+3. The backend does not persist Critical Warning results.
+4. The History Delete feature only hides records from the local interface.
+5. Render free-tier storage is not persistent.
+6. AI-generated prescription extraction and safety analysis may contain errors and require human verification.
+
+---
+
+## 📌 Future Improvements
+
+- [ ] Add user authentication and role-based access.
+- [ ] Implement secure patient data management.
+- [ ] Add a DELETE endpoint for permanent record deletion.
+- [ ] Store Critical Warning results in the backend.
+- [ ] Migrate SQLite to a hosted production database.
+- [ ] Add audit logging for prescription reviews.
+- [ ] Improve prescription extraction validation.
+- [ ] Add automated testing for backend endpoints.
+- [ ] Add monitoring and error logging.
+- [ ] Improve healthcare data privacy and security controls.
+
+---
+
+## 👨‍💻 Developer
+
+**Yashodip Salunkhe**
+
+Aspiring Data Analyst | Data Science & Generative AI Enthusiast
+
+Interested in building AI-powered applications, data analytics solutions, and intelligent automation systems.
+
+---
+
+## ⭐ Support the Project
+
+If you find **MediGrid AI** interesting or useful, please consider giving the repository a ⭐ star on GitHub.
+
+Your support and feedback are appreciated!
+
+If you have suggestions, improvements, or ideas, feel free to open an issue or contribute to the project.
+
+---
+
+## 📄 License
+
+Add your preferred open-source license here, if applicable.
