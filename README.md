@@ -26,7 +26,8 @@ Explore the MediGrid AI dashboard and its key features.
 ### 🏠 Dashboard
 
 <!-- Replace the path with your actual screenshot -->
-![MediGrid AI Dashboard](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3ea791b8-85b4-4741-a525-f7d9399f335f" />
+![MediGrid AI Dashboard]
+(<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3ea791b8-85b4-4741-a525-f7d9399f335f" />
 )
 
 ### 📄 Prescription Analyzer
